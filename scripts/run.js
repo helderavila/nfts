@@ -9,6 +9,9 @@ const main = async () => {
   // Wait for it to be mined.
   await txn.wait()
 
+  const total = await nftContract.maxMintable()
+  console.log('total', total.toString())
+
   // Mint another NFT for fun.
   txn = await nftContract.makeAnEpicNFT()
   // Wait for it to be mined.
